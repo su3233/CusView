@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 /**
  * @autor sts
  * @date 2023/11/9 00:30
- * @description
+ * @description paint
  */
 public class BaseView extends View {
 
