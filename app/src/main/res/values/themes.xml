@@ -1,9 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CusView" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CusView" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="Theme.CusView" parent="Base.Theme.CusView" />
+
+    <!-- 设置”...“ 点击时的主题(即右上角的那个menu) -->
+    <style name="ToolBarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">#616161</item><!--设置背景颜色的-->
+        <item name="android:textColorPrimary">@android:color/white</item><!--设置文字颜色的-->
+        <item name="android:textSize">16sp</item><!--设置文字大小的-->
+        <item name="android:paddingEnd">-5dp</item><!--设置点击”...“弹出的菜单的位置 ，负数是往右移-->
+    </style>
 </resources>

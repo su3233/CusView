@@ -13,6 +13,7 @@ class CaptureOneActivity : BaseActivity<ActivityCaptureOneBinding>() {
     }
 
     override fun init() {
+
     }
 
     override fun initClick() {
