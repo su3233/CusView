@@ -47,4 +47,17 @@
         android:layout_height="wrap_content"
         android:text="set动画"
         android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_set_anim_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="scan动画"
+        android:textAllCaps="false" />
+
+    <include
+        android:id="@+id/scan_view_all"
+        layout="@layout/view_scan_anim" />
+
+
 </androidx.appcompat.widget.LinearLayoutCompat>

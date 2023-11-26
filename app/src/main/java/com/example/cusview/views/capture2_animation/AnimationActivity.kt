@@ -194,6 +194,26 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
 //                binding.tvAnimTarget.startAnimation(this)
 //            }
         }
+        /**
+         * 扫描动画
+         */
+        val animation1 = AnimationUtils.loadAnimation(this, R.anim.scan_anim)
+        val animation2 = AnimationUtils.loadAnimation(this, R.anim.scan_anim)
+        val animation3 = AnimationUtils.loadAnimation(this, R.anim.scan_anim)
+        val animation4 = AnimationUtils.loadAnimation(this, R.anim.scan_anim)
+        binding.btSetAnimScan.setOnClickListener {
+            binding.scanViewAll.ivCircle1.startAnimation(animation1)
+
+            animation2.startOffset = 600
+            binding.scanViewAll.ivCircle2.startAnimation(animation2)
+
+            animation3.startOffset = 1200
+            binding.scanViewAll.ivCircle3.startAnimation(animation3)
+
+            animation4.startOffset = 1800
+            binding.scanViewAll.ivCircle4.startAnimation(animation4)
+
+        }
     }
 
 }
