@@ -1,6 +1,7 @@
 package com.example.cusview.views.capture2_animation
 
 import android.graphics.drawable.AnimatedImageDrawable
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -214,6 +215,12 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
             binding.scanViewAll.ivCircle4.startAnimation(animation4)
 
         }
+
+        /**
+         * 帧动画实现播放动画
+         */
+        val playAnim = binding.ivPlayAnimList.drawable as AnimationDrawable
+        playAnim.start()
     }
 
 }
