@@ -4,9 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.RegionIterator;
 import android.util.AttributeSet;
@@ -14,14 +12,12 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.example.cusview.R;
-
 /**
  * @autor sts
  * @date 2023/11/9 00:30
  * @description paint
  */
-public class BaseView extends View {
+public class PaintPathView extends View {
     /**
      * 重绘时会调用onDraw，因此不建议在oDraw中创建paint等对象。应该在初始化时一次性创建
      *
@@ -143,19 +139,19 @@ public class BaseView extends View {
         }
     }
 
-    public BaseView(Context context) {
+    public PaintPathView(Context context) {
         super(context);
     }
 
-    public BaseView(Context context, @Nullable AttributeSet attrs) {
+    public PaintPathView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public BaseView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PaintPathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public BaseView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public PaintPathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 }

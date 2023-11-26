@@ -14,4 +14,11 @@
         android:text="1、绘图基础"
         android:textAllCaps="false" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_capture_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2、动画"
+        android:textAllCaps="false" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

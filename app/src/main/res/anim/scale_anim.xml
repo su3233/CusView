@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="500"
+    android:fillAfter="true"
+    android:fromXScale="0.0"
+    android:fromYScale="0.0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="2"
+    android:repeatMode="reverse"
+    android:toXScale="1.4"
+    android:toYScale="1.4" />
+
+    <!--pivotX
+    50px 坐标位置
+    ,50% 自身控件的百分比
+    ,50%p 以父控件为取值基数
+
+
+    android:fillAfter="true"动画结束时的状态
+
+
+    android:repeatCount="2"
+    android:repeatMode="reverse" 重复的设置
+    -->

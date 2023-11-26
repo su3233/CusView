@@ -29,6 +29,10 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
     abstract fun init()
     abstract fun initClick()
 
+    fun setTitle(title: String) {
+        supportActionBar?.title = title
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             id.home -> finish()

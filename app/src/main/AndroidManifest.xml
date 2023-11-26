@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CusView"
         tools:targetApi="31">
         <activity
+            android:name=".views.capture2_animation.AnimationActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.capture1_base.CaptureOneActivity"
             android:exported="false" />
         <activity
