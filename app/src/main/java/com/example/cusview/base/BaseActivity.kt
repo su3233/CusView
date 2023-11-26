@@ -13,6 +13,10 @@ import androidx.viewbinding.ViewBinding
  *@description
  */
 abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
+    companion object {
+        var TAG: String = this.javaClass.name
+    }
+
     lateinit var binding: T
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

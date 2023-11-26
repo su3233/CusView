@@ -3,5 +3,7 @@
     android:duration="800"
     android:fillBefore="true"
     android:fromAlpha="0.2"
+    android:interpolator="@android:anim/linear_interpolator"
     android:toAlpha="1.0"/>
 
+<!--插值器-->

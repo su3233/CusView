@@ -1,8 +1,25 @@
 package com.example.cusview.views.capture2_animation
 
+import android.graphics.drawable.AnimatedImageDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
+import android.view.animation.AnticipateInterpolator
+import android.view.animation.AnticipateOvershootInterpolator
+import android.view.animation.BounceInterpolator
+import android.view.animation.CycleInterpolator
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
+import android.view.animation.OvershootInterpolator
+import android.view.animation.RotateAnimation
+import android.view.animation.ScaleAnimation
+import android.view.animation.TranslateAnimation
 import com.example.cusview.R
 import com.example.cusview.base.BaseActivity
 import com.example.cusview.databinding.ActivityAnimationctivityBinding
@@ -21,33 +38,161 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
         /**
          * 动画类型分为alpha、scale、translate、rotate、set（动画集）
          */
+
+        /**
+         * 线性插值器：匀速
+         */
+        LinearInterpolator()
+        /**
+         * 开始和结束比较慢，中间比较快
+         */
+        AccelerateDecelerateInterpolator()
+        /**
+         * 加速插值器：开始比较慢，然后变快
+         */
+        AccelerateInterpolator()
+        /**
+         *减速插值器：速度逐渐变慢
+         */
+        DecelerateInterpolator()
+        /**
+         * 弹跳插值器:类似弹球，会回退一下
+         */
+        BounceInterpolator()
+        /**
+         * 初始值偏移插值器：开始时会向前偏移一段距离,如translate动画会先反向移动一段距离，tension越大偏移距离越大，默认是2
+         */
+        AnticipateInterpolator(4F)
+        /**
+         * 结束偏移插值器:动画结束时会惯性继续向前进行一段距离
+         */
+        OvershootInterpolator(4f)
+        /**
+         * 两个插值器的结合，开始会向前进行一段，结束会向后进行一段
+         */
+        AnticipateOvershootInterpolator(3f)
+        /**
+         * 循环插值器：速度以正弦变化,2为循环次数
+         */
+        CycleInterpolator(2f)
     }
 
     override fun initClick() {
         binding.btScaleAnim.setOnClickListener {
-            AnimationUtils.loadAnimation(this, R.anim.scale_anim).apply {
+            /**
+             * 代码实现
+             */
+            ScaleAnimation(
+                0.0f,
+                1.4f,
+                0.0f,
+                1.4f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f
+            ).apply {
+                this.duration = 800
+                repeatCount = 3
+                /**
+                 * 插值器
+                 */
+                interpolator = LinearInterpolator()
+                repeatMode = Animation.REVERSE
+                //设置动画监听
+                setAnimationListener(object : Animation.AnimationListener {
+                    override fun onAnimationStart(p0: Animation?) {
+                        Log.i(TAG, "onAnimationStart: ")
+                    }
+
+                    override fun onAnimationEnd(p0: Animation?) {
+                        Log.i(TAG, "onAnimationEnd: ")
+                        AlphaAnimation(1.0f, 0.0f).apply {
+                            duration = 3000
+                            binding.tvAnimTarget.startAnimation(this)
+                        }
+                    }
+
+                    override fun onAnimationRepeat(p0: Animation?) {
+                        Log.i(TAG, "onAnimationRepeat: ")
+                    }
+
+                })
                 binding.tvAnimTarget.startAnimation(this)
             }
+//            AnimationUtils.loadAnimation(this, R.anim.scale_anim).apply {
+//                binding.tvAnimTarget.startAnimation(this)
+//            }
         }
         binding.btAlphaAnim.setOnClickListener {
-            AnimationUtils.loadAnimation(this, R.anim.alpha_anim).apply {
+            AlphaAnimation(0.0f, 2.0f).apply {
+                this.duration = 800
                 binding.tvAnimTarget.startAnimation(this)
             }
+//            AnimationUtils.loadAnimation(this, R.anim.alpha_anim).apply {
+//                binding.tvAnimTarget.startAnimation(this)
+//            }
         }
         binding.btRoateAnim.setOnClickListener {
-            AnimationUtils.loadAnimation(this, R.anim.rotate_anim).apply {
+            RotateAnimation(
+                0.0f, 90.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+            ).apply {
+                duration = 800
                 binding.tvAnimTarget.startAnimation(this)
             }
+//            AnimationUtils.loadAnimation(this, R.anim.rotate_anim).apply {
+//                binding.tvAnimTarget.startAnimation(this)
+//            }
         }
         binding.btTranslateAnim.setOnClickListener {
-            AnimationUtils.loadAnimation(this, R.anim.translate_anim).apply {
+            TranslateAnimation(
+                Animation.ABSOLUTE,
+                0.0f,
+                Animation.ABSOLUTE,
+                100.0f,
+                Animation.ABSOLUTE,
+                0.0f,
+                Animation.ABSOLUTE,
+                100.0f
+            ).apply {
+                duration = 800
                 binding.tvAnimTarget.startAnimation(this)
             }
+//            AnimationUtils.loadAnimation(this, R.anim.translate_anim).apply {
+//                binding.tvAnimTarget.startAnimation(this)
+//            }
         }
         binding.btSetAnim.setOnClickListener {
-            AnimationUtils.loadAnimation(this, R.anim.set_anim).apply {
+            AnimationSet(true).apply {
+                addAnimation(
+                    ScaleAnimation(
+                        0.0f,
+                        1.4f,
+                        0.0f,
+                        1.4f,
+                        Animation.RELATIVE_TO_SELF,
+                        0.5f,
+                        Animation.RELATIVE_TO_SELF,
+                        0.5f
+                    )
+                )
+                addAnimation(
+                    RotateAnimation(
+                        0.0f,
+                        90.0f,
+                        Animation.RELATIVE_TO_SELF,
+                        0.5f,
+                        Animation.RELATIVE_TO_SELF,
+                        0.5f
+                    )
+                )
+                this.duration = 2000
+                fillAfter = true
                 binding.tvAnimTarget.startAnimation(this)
             }
+//            AnimationUtils.loadAnimation(this, R.anim.set_anim).apply {
+//                binding.tvAnimTarget.startAnimation(this)
+//            }
         }
     }
 
