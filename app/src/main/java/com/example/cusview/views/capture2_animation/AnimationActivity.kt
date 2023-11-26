@@ -29,6 +29,26 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
                 binding.tvAnimTarget.startAnimation(this)
             }
         }
+        binding.btAlphaAnim.setOnClickListener {
+            AnimationUtils.loadAnimation(this, R.anim.alpha_anim).apply {
+                binding.tvAnimTarget.startAnimation(this)
+            }
+        }
+        binding.btRoateAnim.setOnClickListener {
+            AnimationUtils.loadAnimation(this, R.anim.rotate_anim).apply {
+                binding.tvAnimTarget.startAnimation(this)
+            }
+        }
+        binding.btTranslateAnim.setOnClickListener {
+            AnimationUtils.loadAnimation(this, R.anim.translate_anim).apply {
+                binding.tvAnimTarget.startAnimation(this)
+            }
+        }
+        binding.btSetAnim.setOnClickListener {
+            AnimationUtils.loadAnimation(this, R.anim.set_anim).apply {
+                binding.tvAnimTarget.startAnimation(this)
+            }
+        }
     }
 
 }
