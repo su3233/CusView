@@ -1,13 +1,11 @@
 package com.example.cusview
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.viewbinding.ViewBinding
 import com.example.cusview.base.BaseActivity
 import com.example.cusview.databinding.ActivityMainBinding
-import com.example.cusview.views.capture1_base.CaptureOneActivity
-import com.example.cusview.views.capture2_animation.AnimationActivity
+import com.example.cusview.views.cap1_base.CaptureOneActivity
+import com.example.cusview.views.cap2_animation.AnimationActivity
+import com.example.cusview.views.cap3_value_animator.PropertyAnimatorActivity
 
 /**
  *@autor sts
@@ -22,16 +20,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun init() {
-        setTitle("自定义控件开发")
+    override fun initData() {
         binding.btCapture1.setOnClickListener {
             Intent(this, CaptureOneActivity::class.java).apply { startActivity(this) }
         }
         binding.btCapture2.setOnClickListener {
             Intent(this, AnimationActivity::class.java).apply { startActivity(this) }
         }
+        binding.btCapture3.setOnClickListener {
+            Intent(this, PropertyAnimatorActivity::class.java).apply { startActivity(this) }
+        }
+
     }
 
+    override fun definiteTitle() = "自定义View"
     override fun initClick() {
 
     }

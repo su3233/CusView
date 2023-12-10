@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".views.capture2_animation.AnimationActivity">
+    tools:context=".views.cap2_animation.AnimationActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_anim_target"

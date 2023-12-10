@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.capture1_base.CaptureOneActivity">
+    tools:context=".views.cap1_base.CaptureOneActivity">
 
-    <com.example.cusview.views.capture1_base.PaintPathView
+    <com.example.cusview.views.cap1_base.PaintPathView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"/>

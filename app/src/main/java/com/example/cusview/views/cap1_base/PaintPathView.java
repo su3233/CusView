@@ -1,4 +1,4 @@
-package com.example.cusview.views.capture1_base;
+package com.example.cusview.views.cap1_base;
 
 import android.content.Context;
 import android.graphics.Canvas;

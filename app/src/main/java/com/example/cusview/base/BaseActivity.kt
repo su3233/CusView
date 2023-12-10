@@ -22,20 +22,18 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = initViewBinding()
         setContentView(binding.root)
-        supportActionBar?.title = this.componentName.className
+        supportActionBar?.title = definiteTitle()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        init()
+        initData()
         initClick()
     }
 
     abstract fun initViewBinding(): T
 
-    abstract fun init()
+    abstract fun initData()
+    abstract fun definiteTitle(): String
     abstract fun initClick()
 
-    fun setTitle(title: String) {
-        supportActionBar?.title = title
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

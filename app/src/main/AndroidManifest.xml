@@ -16,10 +16,13 @@
         android:theme="@style/Theme.CusView"
         tools:targetApi="31">
         <activity
-            android:name=".views.capture2_animation.AnimationActivity"
+            android:name=".views.cap2_animation.AnimationActivity"
             android:exported="false" />
         <activity
-            android:name=".views.capture1_base.CaptureOneActivity"
+            android:name=".views.cap1_base.CaptureOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.cap3_value_animator.PropertyAnimatorActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

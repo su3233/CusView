@@ -1,4 +1,4 @@
-package com.example.cusview.views.capture1_base;
+package com.example.cusview.views.cap1_base;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.Nullable;
 

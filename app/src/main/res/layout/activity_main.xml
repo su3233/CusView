@@ -18,7 +18,14 @@
         android:id="@+id/bt_capture_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2、动画"
+        android:text="2、view动画（tween、frame）"
+        android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_capture_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3、属性动画"
         android:textAllCaps="false" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

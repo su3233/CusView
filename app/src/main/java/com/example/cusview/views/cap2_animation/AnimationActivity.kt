@@ -1,9 +1,6 @@
-package com.example.cusview.views.capture2_animation
+package com.example.cusview.views.cap2_animation
 
-import android.graphics.drawable.AnimatedImageDrawable
 import android.graphics.drawable.AnimationDrawable
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
@@ -33,9 +30,9 @@ import com.example.cusview.databinding.ActivityAnimationctivityBinding
  */
 class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
     override fun initViewBinding() = ActivityAnimationctivityBinding.inflate(layoutInflater)
+    override fun definiteTitle() = "view动画"
 
-    override fun init() {
-        setTitle("动画")
+    override fun initData() {
         /**
          * 动画类型分为alpha、scale、translate、rotate、set（动画集）
          */
