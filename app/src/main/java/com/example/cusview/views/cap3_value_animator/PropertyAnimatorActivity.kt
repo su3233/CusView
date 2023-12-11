@@ -7,6 +7,7 @@ import android.animation.ValueAnimator
 import android.renderscript.Sampler.Value
 import android.util.Log
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.example.cusview.R
 import com.example.cusview.base.BaseActivity
 import com.example.cusview.databinding.ActivityValueAnimatorBinding
 
@@ -17,6 +18,10 @@ import com.example.cusview.databinding.ActivityValueAnimatorBinding
  */
 class PropertyAnimatorActivity : BaseActivity<ActivityValueAnimatorBinding>() {
     private var valueAnim: ValueAnimator? = null
+    private val fm by lazy {
+        ObjectAnimatorFragment()
+    }
+
     override fun initViewBinding() = ActivityValueAnimatorBinding.inflate(layoutInflater)
 
     override fun initData() {
@@ -24,6 +29,12 @@ class PropertyAnimatorActivity : BaseActivity<ActivityValueAnimatorBinding>() {
          * Evaluator用于将插值器返回的值转换为对应的数值
          */
 
+    }
+
+    override fun initView() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fcvObject, fm)
+        }.commit()
     }
 
     override fun initClick() {

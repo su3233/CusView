@@ -25,7 +25,12 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         supportActionBar?.title = definiteTitle()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         initData()
+        initView()
         initClick()
+    }
+
+    open fun initView() {
+
     }
 
     abstract fun initViewBinding(): T
