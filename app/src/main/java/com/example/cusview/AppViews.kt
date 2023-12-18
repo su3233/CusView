@@ -7,7 +7,7 @@ import android.os.Bundle
 /**
  *@autor sts
  *@date 2023/11/7 23:48
- *@description
+ *@description application
  */
 class AppViews : Application() {
     override fun onCreate() {
