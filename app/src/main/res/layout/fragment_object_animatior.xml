@@ -27,4 +27,8 @@
         android:text="end"
         android:textAllCaps="false" />
 
+    <include
+        android:id="@+id/anim_path_menu"
+        layout="@layout/anim_path_0" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

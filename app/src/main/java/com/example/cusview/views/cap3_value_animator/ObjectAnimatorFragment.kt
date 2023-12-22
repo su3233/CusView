@@ -3,12 +3,17 @@ package com.example.cusview.views.cap3_value_animator
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.animation.addListener
+import androidx.core.view.isVisible
 import androidx.viewbinding.ViewBinding
 import com.example.cusview.base.BaseFragment
 import com.example.cusview.databinding.FragmentObjectAnimatiorBinding
+import kotlin.math.cos
+import kotlin.math.sin
 
 /**
  *ObjectAnimator：通过调用view对象的属性方法（setScaleX）实现对view的动画
@@ -16,6 +21,7 @@ import com.example.cusview.databinding.FragmentObjectAnimatiorBinding
  */
 class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
     private var animatorSet: AnimatorSet? = null
+    private var mIsMenuOpen = false
     override fun initData() {
 
     }
@@ -107,6 +113,145 @@ class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
         }
         binding.btObjectEnd.setOnClickListener {
             animatorSet?.cancel()
+        }
+        /**
+         * 路径动画，点击会有扇形展开菜单
+         */
+        binding.animPathMenu.menu.setOnClickListener {
+            toast("menu")
+            if (!mIsMenuOpen) {
+                mIsMenuOpen = true
+                openMenu()
+            } else {
+                mIsMenuOpen = false
+                closeMenu()
+            }
+        }
+//        binding.animPathMenu.item1.setOnClickListener {
+//            toast("item1")
+//            if (!mIsMenuOpen) {
+//                mIsMenuOpen = true
+//                openMenu()
+//            } else {
+//                mIsMenuOpen = false
+//                closeMenu()
+//            }
+//        }
+//        binding.animPathMenu.item2.setOnClickListener {
+//            toast("item2")
+//            if (!mIsMenuOpen) {
+//                mIsMenuOpen = true
+//                openMenu()
+//            } else {
+//                mIsMenuOpen = false
+//                closeMenu()
+//            }
+//        }
+//        binding.animPathMenu.item3.setOnClickListener {
+//            toast("item3")
+//            if (!mIsMenuOpen) {
+//                mIsMenuOpen = true
+//                openMenu()
+//            } else {
+//                mIsMenuOpen = false
+//                closeMenu()
+//            }
+//        }
+//        binding.animPathMenu.item4.setOnClickListener {
+//            toast("item4")
+//            if (!mIsMenuOpen) {
+//                mIsMenuOpen = true
+//                openMenu()
+//            } else {
+//                mIsMenuOpen = false
+//                closeMenu()
+//            }
+//        }
+//        binding.animPathMenu.item5.setOnClickListener {
+//            toast("item5")
+//            if (!mIsMenuOpen) {
+//                mIsMenuOpen = true
+//                openMenu()
+//            } else {
+//                mIsMenuOpen = false
+//                closeMenu()
+//            }
+//        }
+    }
+
+    private fun closeMenu() {
+        doAnimateClose(binding.animPathMenu.item1, 0, 5, 500)
+        doAnimateClose(binding.animPathMenu.item2, 1, 5, 500)
+        doAnimateClose(binding.animPathMenu.item3, 2, 5, 500)
+        doAnimateClose(binding.animPathMenu.item4, 3, 5, 500)
+        doAnimateClose(binding.animPathMenu.item5, 4, 5, 500)
+
+    }
+
+    private fun doAnimateClose(button: Button, index: Int, total: Int, radius: Int) {
+//        if (button.isVisible.not()) {
+//            button.isVisible = true
+//        }
+        val degree = Math.PI * index / ((total - 1)) * 2
+        val translationX = -(radius * sin(degree)).toFloat()
+        val translationY = -(radius * cos(degree)).toFloat()
+        AnimatorSet().apply {
+            playTogether(
+                ObjectAnimator.ofFloat(button, "translationX", translationX, 0f),
+                ObjectAnimator.ofFloat(button, "translationY", translationY, 0f),
+                ObjectAnimator.ofFloat(button, "scaleX", 1f, 0f),
+                ObjectAnimator.ofFloat(button, "scaleY", 1f, 0f),
+                ObjectAnimator.ofFloat(button, "alpha", 1f, 0f)
+            )
+            addListener(object :Animator.AnimatorListener{
+                override fun onAnimationStart(p0: Animator) {
+
+                }
+
+                override fun onAnimationEnd(p0: Animator) {
+                    button.isVisible = false
+
+                }
+
+                override fun onAnimationCancel(p0: Animator) {
+                }
+
+                override fun onAnimationRepeat(p0: Animator) {
+                }
+
+            })
+            duration = 500
+            start()
+        }
+
+    }
+
+    private fun openMenu() {
+        doAnimateOpen(binding.animPathMenu.item1, 0, 5, 500)
+        doAnimateOpen(binding.animPathMenu.item2, 1, 5, 500)
+        doAnimateOpen(binding.animPathMenu.item3, 2, 5, 500)
+        doAnimateOpen(binding.animPathMenu.item4, 3, 5, 500)
+        doAnimateOpen(binding.animPathMenu.item5, 4, 5, 500)
+
+    }
+
+    private fun doAnimateOpen(button: Button, index: Int, total: Int, radius: Int) {
+        if (button.isVisible.not()) {
+            button.isVisible = true
+        }
+        val degree = Math.toRadians(90.0) / (total - 1) * index
+        val translationX = -(radius * sin(degree)).toFloat()
+        val translationY = -(radius * cos(degree)).toFloat()
+        AnimatorSet().apply {
+            playTogether(
+                ObjectAnimator.ofFloat(button, "translationX", 0f, translationX),
+                ObjectAnimator.ofFloat(button, "translationY", 0f, translationY),
+                ObjectAnimator.ofFloat(button, "scaleX", 0f, 1f),
+                ObjectAnimator.ofFloat(button, "scaleY", 0f, 1f),
+                ObjectAnimator.ofFloat(button, "alpha", 0f, 1f)
+            )
+            duration = 500
+            start()
         }
     }
 

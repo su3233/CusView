@@ -17,6 +17,11 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
     protected lateinit var binding: T
     private var mContext: Context? = null
+
+    companion object {
+        const val TAG = "anim"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
