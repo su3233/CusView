@@ -127,56 +127,6 @@ class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
                 closeMenu()
             }
         }
-//        binding.animPathMenu.item1.setOnClickListener {
-//            toast("item1")
-//            if (!mIsMenuOpen) {
-//                mIsMenuOpen = true
-//                openMenu()
-//            } else {
-//                mIsMenuOpen = false
-//                closeMenu()
-//            }
-//        }
-//        binding.animPathMenu.item2.setOnClickListener {
-//            toast("item2")
-//            if (!mIsMenuOpen) {
-//                mIsMenuOpen = true
-//                openMenu()
-//            } else {
-//                mIsMenuOpen = false
-//                closeMenu()
-//            }
-//        }
-//        binding.animPathMenu.item3.setOnClickListener {
-//            toast("item3")
-//            if (!mIsMenuOpen) {
-//                mIsMenuOpen = true
-//                openMenu()
-//            } else {
-//                mIsMenuOpen = false
-//                closeMenu()
-//            }
-//        }
-//        binding.animPathMenu.item4.setOnClickListener {
-//            toast("item4")
-//            if (!mIsMenuOpen) {
-//                mIsMenuOpen = true
-//                openMenu()
-//            } else {
-//                mIsMenuOpen = false
-//                closeMenu()
-//            }
-//        }
-//        binding.animPathMenu.item5.setOnClickListener {
-//            toast("item5")
-//            if (!mIsMenuOpen) {
-//                mIsMenuOpen = true
-//                openMenu()
-//            } else {
-//                mIsMenuOpen = false
-//                closeMenu()
-//            }
-//        }
     }
 
     private fun closeMenu() {
