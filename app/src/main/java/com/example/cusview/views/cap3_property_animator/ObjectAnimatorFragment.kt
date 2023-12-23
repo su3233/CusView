@@ -1,15 +1,14 @@
-package com.example.cusview.views.cap3_value_animator
+package com.example.cusview.views.cap3_property_animator
 
 import android.animation.Animator
+import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.util.Log
+import android.animation.ValueAnimator
 import android.view.LayoutInflater
 import android.widget.Button
-import android.widget.Toast
-import androidx.core.animation.addListener
 import androidx.core.view.isVisible
-import androidx.viewbinding.ViewBinding
+import com.example.cusview.R
 import com.example.cusview.base.BaseFragment
 import com.example.cusview.databinding.FragmentObjectAnimatiorBinding
 import kotlin.math.cos
@@ -35,6 +34,11 @@ class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
     }
 
     override fun initClick() {
+//        xmlAnimator()
+        xmlObjectAnim()
+        binding.tvObject.setOnClickListener {
+            toast("click")
+        }
         /**
          * AnimatorSet函数中设置的插值器和时间等，会覆盖掉单个动画中的设置
          */
@@ -129,6 +133,39 @@ class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
         }
     }
 
+    /**
+     * xml实现属性动画
+     */
+    private fun xmlObjectAnim() {
+        (AnimatorInflater.loadAnimator(
+            context,
+            R.animator.xml_object_anim
+        ) as ObjectAnimator).apply {
+            target = binding.tvObject
+            start()
+        }
+
+    }
+
+    /**
+     * xml实现animator
+     */
+    private fun xmlAnimator() {
+        (AnimatorInflater.loadAnimator(context, R.animator.xml_animator) as ValueAnimator).apply {
+            addUpdateListener {
+                val offset = (it.animatedValue as Float).toInt()
+                binding.tvObject.layout(
+                    offset,
+                    offset,
+                    binding.tvObject.width + offset,
+                    binding.tvObject.height + offset
+                )
+            }
+            start()
+        }
+
+    }
+
     private fun closeMenu() {
         doAnimateClose(binding.animPathMenu.item1, 0, 5, 500)
         doAnimateClose(binding.animPathMenu.item2, 1, 5, 500)
@@ -153,7 +190,7 @@ class ObjectAnimatorFragment : BaseFragment<FragmentObjectAnimatiorBinding>() {
                 ObjectAnimator.ofFloat(button, "scaleY", 1f, 0f),
                 ObjectAnimator.ofFloat(button, "alpha", 1f, 0f)
             )
-            addListener(object :Animator.AnimatorListener{
+            addListener(object : Animator.AnimatorListener {
                 override fun onAnimationStart(p0: Animator) {
 
                 }

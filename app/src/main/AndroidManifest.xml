@@ -22,7 +22,10 @@
             android:name=".views.cap1_base.CaptureOneActivity"
             android:exported="false" />
         <activity
-            android:name=".views.cap3_value_animator.PropertyAnimatorActivity"
+            android:name=".views.cap3_property_animator.PropertyAnimatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.cap4_property_up.PropertyAnimUpActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

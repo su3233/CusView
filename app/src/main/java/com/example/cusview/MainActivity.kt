@@ -5,7 +5,8 @@ import com.example.cusview.base.BaseActivity
 import com.example.cusview.databinding.ActivityMainBinding
 import com.example.cusview.views.cap1_base.CaptureOneActivity
 import com.example.cusview.views.cap2_animation.AnimationActivity
-import com.example.cusview.views.cap3_value_animator.PropertyAnimatorActivity
+import com.example.cusview.views.cap3_property_animator.PropertyAnimatorActivity
+import com.example.cusview.views.cap4_property_up.PropertyAnimUpActivity
 
 /**
  *@autor sts
@@ -29,6 +30,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
         binding.btCapture3.setOnClickListener {
             Intent(this, PropertyAnimatorActivity::class.java).apply { startActivity(this) }
+        }
+        binding.btCapture4.setOnClickListener {
+            Intent(this, PropertyAnimUpActivity::class.java).apply { startActivity(this) }
         }
 
     }

@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
-    android:orientation="vertical"
-    tools:context=".views.cap3_property_animator.ObjectAnimatorFragment">
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvObject"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+    <TextView
+        android:id="@+id/tv_pro_up"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@color/black" />
 
     <Button
-        android:id="@+id/btObjectStart"
+        android:id="@+id/btPropertyUpStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="start"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btObjectEnd"
+        android:id="@+id/btPropertyUpEnd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="end"
         android:textAllCaps="false" />
-
-    <include
-        android:id="@+id/anim_path_menu"
-        layout="@layout/anim_path_0" />
-
 </androidx.appcompat.widget.LinearLayoutCompat>

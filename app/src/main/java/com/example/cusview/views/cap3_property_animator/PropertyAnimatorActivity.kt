@@ -1,12 +1,10 @@
-package com.example.cusview.views.cap3_value_animator
+package com.example.cusview.views.cap3_property_animator
 
 import android.animation.Animator
 import android.animation.ArgbEvaluator
 import android.animation.TypeEvaluator
 import android.animation.ValueAnimator
-import android.renderscript.Sampler.Value
 import android.util.Log
-import android.view.animation.AccelerateDecelerateInterpolator
 import com.example.cusview.R
 import com.example.cusview.base.BaseActivity
 import com.example.cusview.databinding.ActivityValueAnimatorBinding
