@@ -35,5 +35,17 @@
         android:text="4、属性动画进阶"
         android:textAllCaps="false" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_capture_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5、动画进阶"
+        android:textAllCaps="false" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_capture_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6、Paint的基本使用"
+        android:textAllCaps="false" />
 </androidx.appcompat.widget.LinearLayoutCompat>

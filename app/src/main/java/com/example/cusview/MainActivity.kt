@@ -7,6 +7,9 @@ import com.example.cusview.views.cap1_base.CaptureOneActivity
 import com.example.cusview.views.cap2_animation.AnimationActivity
 import com.example.cusview.views.cap3_property_animator.PropertyAnimatorActivity
 import com.example.cusview.views.cap4_property_up.PropertyAnimUpActivity
+import com.example.cusview.views.cap5_animator_up.AnimatorUpActivity
+import com.example.cusview.views.cap6_paint_basic.PaintBasicActivity
+
 
 /**
  *@autor sts
@@ -34,7 +37,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.btCapture4.setOnClickListener {
             Intent(this, PropertyAnimUpActivity::class.java).apply { startActivity(this) }
         }
-
+        binding.btCapture5.setOnClickListener {
+            Intent(this, AnimatorUpActivity::class.java).apply { startActivity(this) }
+        }
+        binding.btCapture6.setOnClickListener {
+            Intent(this, PaintBasicActivity::class.java).apply { startActivity(this) }
+        }
     }
 
     override fun definiteTitle() = "自定义View"

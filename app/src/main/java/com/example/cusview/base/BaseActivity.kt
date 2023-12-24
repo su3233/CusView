@@ -29,15 +29,16 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         initClick()
     }
 
+    abstract fun definiteTitle(): String
+    abstract fun initViewBinding(): T
+
+    abstract fun initClick()
+
     open fun initView() {
 
     }
 
-    abstract fun initViewBinding(): T
-
     abstract fun initData()
-    abstract fun definiteTitle(): String
-    abstract fun initClick()
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

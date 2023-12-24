@@ -28,6 +28,12 @@
             android:name=".views.cap4_property_up.PropertyAnimUpActivity"
             android:exported="false" />
         <activity
+            android:name=".views.cap5_animator_up.AnimatorUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.cap6_paint_basic.PaintBasicActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
