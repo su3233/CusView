@@ -27,6 +27,7 @@ import com.example.cusview.databinding.ActivityAnimationctivityBinding
  *@date 2023/11/26 14:42
  *@description 动画
  * android动画分为view动画（又分为tween动画<补间动画>和frame动画<帧动画>）和property动画（又分为value动画和object动画）
+ * view动画只是视图的变换，原位置的点击事件还是会触发，新位置的点击事件不触发
  */
 class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
     override fun initViewBinding() = ActivityAnimationctivityBinding.inflate(layoutInflater)
@@ -76,6 +77,9 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
     }
 
     override fun initClick() {
+        binding.tvAnimTarget.setOnClickListener {
+            toast("click")
+        }
         binding.btScaleAnim.setOnClickListener {
             /**
              * 代码实现
@@ -118,6 +122,9 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
                 })
                 binding.tvAnimTarget.startAnimation(this)
             }
+            /**
+             * 加载xml动画
+             */
 //            AnimationUtils.loadAnimation(this, R.anim.scale_anim).apply {
 //                binding.tvAnimTarget.startAnimation(this)
 //            }
@@ -153,6 +160,7 @@ class AnimationActivity : BaseActivity<ActivityAnimationctivityBinding>() {
                 Animation.ABSOLUTE,
                 100.0f
             ).apply {
+                fillAfter = true
                 duration = 800
                 binding.tvAnimTarget.startAnimation(this)
             }
