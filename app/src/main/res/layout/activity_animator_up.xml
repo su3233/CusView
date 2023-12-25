@@ -27,6 +27,9 @@
             android:layout_marginLeft="20dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <com.example.cusview.views.cap5_animator_up.AliPayView
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
 
     <Button
         android:id="@+id/btAnimatorUpStart"
