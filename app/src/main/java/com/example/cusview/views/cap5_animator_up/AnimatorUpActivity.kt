@@ -7,6 +7,7 @@ import com.example.cusview.databinding.ActivityAnimatorUpBinding
  *@author crete by sutongsheng
  * date：2023/12/24 17:29
  * description:PathMeasure（路径动画）和svg动画
+ * svg设计软件：Illustrator http://editor.method.ac/
  */
 class AnimatorUpActivity : BaseActivity<ActivityAnimatorUpBinding>() {
     override fun definiteTitle() = "动画进阶"
