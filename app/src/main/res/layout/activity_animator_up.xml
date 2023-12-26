@@ -41,6 +41,25 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:srcCompat="@drawable/baseline_call_end_24" />
+
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp">
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="150dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:hint="点击输入" />
+
+            <ImageView
+                android:id="@+id/anim_img"
+                android:layout_width="150dp"
+                android:layout_height="24dp" />
+        </FrameLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -50,5 +69,6 @@
         android:layout_height="wrap_content"
         android:text="start"
         android:textAllCaps="false" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
