@@ -4,11 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_paintBasic"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/black" />
+    <com.example.cusview.views.cap6_paint_basic.PaintText
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
 
     <Button
         android:id="@+id/btPaintBasicStart"
