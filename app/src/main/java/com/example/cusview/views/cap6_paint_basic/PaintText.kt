@@ -37,6 +37,6 @@ class PaintText(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         /**
          * 获取文字的包裹矩形
          */
-        paint.getTextBounds("", 0, text.length, Rect())
+        paint.getTextBounds("harvic's blog", 0, text.length, Rect())
     }
 }
